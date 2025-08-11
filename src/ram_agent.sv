@@ -1,3 +1,8 @@
+`include "uvm_macros.svh"
+`include "ram_driver.sv"
+`include "ram_monitor.sv"
+`include "ram_sequencer.sv"
+import uvm_pkg ::*;
 class ram_agent extends uvm_agent;
 	ram_driver drv;
 	ram_monitor mon;

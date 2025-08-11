@@ -1,6 +1,11 @@
+`include "uvm_macros.svh"
+//`include "ram_sequence_item.sv"
+`include "ram_interfs.sv"
+import uvm_pkg ::*;
 class ram_monitor extends uvm_monitor;
 
-	ram_interfs vif;
+	ram_sequence_item ram_sequence_item_monitor;
+	virtual ram_interfs vif;
 	uvm_analysis_port #(ram_sequence_item) item_collected_port;
 
 	`uvm_component_utils(ram_monitor)
@@ -17,7 +22,7 @@ class ram_monitor extends uvm_monitor;
 			`uvm_fatal(get_type_name(), "Not set at top");
 	endfunction
 
-	virtual task run_phase(uvm_phase phase)
+	virtual task run_phase(uvm_phase phase);
 		super.run_phase(phase);
 		forever
 		begin

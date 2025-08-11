@@ -1,6 +1,6 @@
-//`include "ram_sequence_item.sv"
-//`include "defines.sv"
-//`include "uvm_macros.svh"
+// `include "ram_sequence_item.sv"
+// `include "defines.sv"
+// `include "uvm_macros.svh"
 import uvm_pkg ::*;
 class ram_sequence extends uvm_sequence #(ram_sequence_item);
 	`uvm_object_utils(ram_sequence)

@@ -1,7 +1,13 @@
+`include "uvm_macros.svh"
+`include "ram_sequence_item.sv"
+`include "ram_interfs.sv"
+import uvm_pkg ::*;
+
 class ram_driver extends uvm_driver #(ram_sequence_item);
 
-	ram_interfs vif;
+	virtual ram_interfs vif;
 	uvm_analysis_port #(ram_sequence_item) item_collected_port;		// For coverage
+
 	`uvm_component_utils(ram_driver)
 
 	function new(string name = "ram_driver", uvm_component parent = null);
